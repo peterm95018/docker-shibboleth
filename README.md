@@ -1,15 +1,14 @@
-December 6, 2016 
-
-Objective: Create a container off a pre-made shibboleth-sp debian image to facilitate the configuration of Shib on any host that can run Docker.
+# Objective
+Create a container off a pre-made shibboleth-sp debian image to facilitate the configuration of Shib on any host that can run Docker.
 
 Using the image https://hub.docker.com/r/jtgasper3/debian-shibboleth-sp/ as our base image, I've created a Dockerfile to build out a modified container that can run a full Shib'd web server. This could include application files or be part of a Docker network that includes an app container + shib container.
 
-Notes
+# Notes
 We used my cert and key as the values in the sp-cert and sp-key files. It would not be part of a git repo, so you'll want to make sure your host has a SSL cert or a second cert/key configuration for Shibboleth to use.
 
 For this setup, I registered my dev environment with https://www.testshib.org. 
 
-Installation and Setup
+# Installation and Setup
 The approach here is to modify the apache2 and shibboleth configuration files for your environment and then allow Docker to build an image that includes your modified files.
 
 The /shibboleth-sp directory is used twice in this Dockerfile. 
@@ -29,8 +28,8 @@ One customization here is the addition of SSL. You'll see that I've copied in a 
 
 Finally, I run some a2enmod commands to turn on modules in Apache2. You'll note that I've got proxy turned on and that would be used if I was going to put a NodeJS app on this host. In Docker speak, I'd actually create a new container with the NodeJS app and add it to the Docker network so that I can encapsulate functions to containers.
 
-Our Dockerfile
-# Dockerfile for a UCSC / CRM specific Apache2 + PHP5 + Shibboleth Docker image.
+# Our Dockerfile
+```# Dockerfile for a UCSC / CRM specific Apache2 + PHP5 + Shibboleth Docker image.
 # You will then build your own container off this modified base image after
 # modifying source files for your host environment.
 
@@ -75,18 +74,18 @@ RUN service apache2 restart
 # Exposed ports
 EXPOSE 80
 EXPOSE 443
+```
 
+# Typical Docker Commands
+```docker build -t ssl-shib . ``` note that you work from the build directory. This builds your container
+```docker run -d ssl-shib -p 80:80 -p 443:443```  run your container and map host 80 and 443 to container 80, 443.
+```docker exec -ti <container id> /bin/bash```  gives you a shell into the container
 
-Typical Docker Commands
-docker build -t ssl-shib . <-- note that you work from the build directory. This builds your container
-docker run -d ssl-shib -p 80:80 -p 443:443 <-- run your container and map host 80 and 443 to container 80, 443.
-docker exec -ti <container id> /bin/bash <-- gives you a shell into the container
-
-A Working Container
+# A Working Container
 Launch a browser and head to https://peterm.ucsc.edu/appfiles/index.php. Login with the provided credentials.
 
 
-Dump $_SERVER
+# Dump $_SERVER
 Hello world ! You are authenticated.
 Logout
 Your eduPersonPrincipalName (eppn) is : alterego@testshib.org who has an affiliation of Member
