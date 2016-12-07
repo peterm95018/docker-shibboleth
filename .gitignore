@@ -1,0 +1,4 @@
+# Ignore the cert and key files for host peterm.ucsc.edu
+peterm_ucsc_edu_cert.cer
+peterm.server.key
+
