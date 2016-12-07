@@ -89,12 +89,12 @@ Launch a browser and head to https://peterm.ucsc.edu/appfiles/index.php. Login w
 
 
 # Dump $_SERVER
-```Hello world ! You are authenticated.
+Hello world ! You are authenticated.
 Logout
 Your eduPersonPrincipalName (eppn) is : alterego@testshib.org who has an affiliation of Member
 You may also be known as Alter Ego
 Dump $_SERVER 
-
+```
 Array
 (
     [Shib-Application-ID] => default
