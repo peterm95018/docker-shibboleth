@@ -78,8 +78,10 @@ EXPOSE 443
 ```
 
 # Typical Docker Commands
-`docker build -t ssl-shib .`  note that you work from the build directory. This builds your container
-`docker run -d ssl-shib -p 80:80 -p 443:443`  run your container and map host 80 and 443 to container 80, 443.
+`docker build -t ssl-shib .`  note that you work from the build directory. This builds your container.
+
+`docker run -d ssl-shib -p 80:80 -p 443:443`  run your container and map host 80 and 443 to container 80, 443
+
 `docker exec -ti <container id> /bin/bash`  gives you a shell into the container
 
 # A Working Container
