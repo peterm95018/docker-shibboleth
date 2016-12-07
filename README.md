@@ -118,3 +118,18 @@ Array
 [snipped]
 ```
 
+# Hosting
+At this point, the Nebula service can't take a Docker container. This is becasue the lx- images are actually docker containers themselves. A rule of thumb is that you can't run a container in a container. 
+
+AWS makes it pretty easy to spin up a AMI with Docker installed. In order to get your working *image* from your development environment to your host, you'd do something like this. In this step, we're moving an image and not a container. To list your images:
+`docker images`
+
+move the tarball to your host via sftp
+`docker save ssl-shib | gzip > ssl-shib-latest.tar.gz`
+
+import your image on your host
+`zcat ubuntu-latest.gz | docker import - ubuntu:latest`
+
+Finally, we'll run a container based on our image:
+`docker run -d ssl-shib -p 80:80 -p 443:443`
+
