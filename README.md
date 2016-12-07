@@ -86,7 +86,8 @@ EXPOSE 443
 
 # A Working Container
 Launch a browser and head to https://peterm.ucsc.edu/appfiles/index.php. Login with the provided credentials.
-
+![image of testshib login page]
+(Screen Shot 2016-12-07 at 8.27.15 AM.png)
 
 # Dump $_SERVER
 Hello world ! You are authenticated.
