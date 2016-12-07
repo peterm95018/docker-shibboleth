@@ -125,11 +125,17 @@ AWS makes it pretty easy to spin up a AMI with Docker installed. In order to get
 `docker images`
 
 move the tarball to your host via sftp
+
 `docker save ssl-shib | gzip > ssl-shib-latest.tar.gz`
 
 import your image on your host
+
 `zcat ubuntu-latest.gz | docker import - ubuntu:latest`
 
-Finally, we'll run a container based on our image:
+Finally, we'll run a container based on our image with the ports exposed to the host.
+
 `docker run -d ssl-shib -p 80:80 -p 443:443`
+
+In AWS, you'll remember that you'll need to update your security group with the correct ports opened for your testing.
+
 
