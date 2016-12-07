@@ -29,7 +29,8 @@ One customization here is the addition of SSL. You'll see that I've copied in a 
 Finally, I run some a2enmod commands to turn on modules in Apache2. You'll note that I've got proxy turned on and that would be used if I was going to put a NodeJS app on this host. In Docker speak, I'd actually create a new container with the NodeJS app and add it to the Docker network so that I can encapsulate functions to containers.
 
 # Our Dockerfile
-```# Dockerfile for a UCSC / CRM specific Apache2 + PHP5 + Shibboleth Docker image.
+```
+# Dockerfile for a UCSC / CRM specific Apache2 + PHP5 + Shibboleth Docker image.
 # You will then build your own container off this modified base image after
 # modifying source files for your host environment.
 
@@ -77,16 +78,16 @@ EXPOSE 443
 ```
 
 # Typical Docker Commands
-```docker build -t ssl-shib . ``` note that you work from the build directory. This builds your container
-```docker run -d ssl-shib -p 80:80 -p 443:443```  run your container and map host 80 and 443 to container 80, 443.
-```docker exec -ti <container id> /bin/bash```  gives you a shell into the container
+`docker build -t ssl-shib .`  note that you work from the build directory. This builds your container
+`docker run -d ssl-shib -p 80:80 -p 443:443`  run your container and map host 80 and 443 to container 80, 443.
+`docker exec -ti <container id> /bin/bash`  gives you a shell into the container
 
 # A Working Container
 Launch a browser and head to https://peterm.ucsc.edu/appfiles/index.php. Login with the provided credentials.
 
 
 # Dump $_SERVER
-Hello world ! You are authenticated.
+```Hello world ! You are authenticated.
 Logout
 Your eduPersonPrincipalName (eppn) is : alterego@testshib.org who has an affiliation of Member
 You may also be known as Alter Ego
@@ -112,4 +113,5 @@ Array
     [SSL_TLS_SNI] => peterm.ucsc.edu
     [SSL_SERVER_S_DN_C] => US
 [snipped]
+```
 
