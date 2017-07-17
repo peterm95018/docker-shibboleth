@@ -21,11 +21,12 @@ COPY /apache2/ssl/ca-key.pem /etc/apache2/
 
 # Install PHP5 into image
 RUN apt-get update && apt-get install -y \
-nano \
+emacs \
 php5-common \
 php5-cli \
 php5-mysql \
 php5-curl \
+php-apc \
 libapache2-mod-php5
 
 RUN php5enmod curl
@@ -36,6 +37,8 @@ RUN a2enmod proxy
 RUN a2enmod rewrite
 RUN a2enmod proxy_http
 RUN service apache2 restart
+
+COPY /bashrc /root/.bashrc
 
 # Exposed ports
 EXPOSE 80
