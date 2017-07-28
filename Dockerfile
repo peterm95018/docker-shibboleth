@@ -38,6 +38,9 @@ RUN a2enmod rewrite
 RUN a2enmod proxy_http
 RUN service apache2 restart
 
+RUN php -r "eval('?>'.file_get_contents('https://getcomposer.org/installer'));"
+RUN mv composer.phar /usr/local/bin/composer
+
 COPY /bashrc /root/.bashrc
 
 # Exposed ports

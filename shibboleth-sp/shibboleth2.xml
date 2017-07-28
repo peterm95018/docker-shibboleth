@@ -92,6 +92,10 @@
                 SAML2 SAML1
             </SSO>
 
+            <!--SSO discoveryProtocol="SAMLDS" discoveryURL="https://sygefor.dev/wayf?lang=fr">
+              SAML2 SAML1
+            </SSO-->
+
             <!-- SAML and local-only logout. -->
             <Logout>SAML2 Local</Logout>
 
@@ -124,8 +128,8 @@
         </MetadataProvider>
 
         <!-- Méta-données de la fédération Éducation-Recherche -->
-        <!--MetadataProvider type="XML" uri="https://metadata.federation.renater.fr/renater/main/main-sps-renater-metadata.xml"
-                          backingFilePath="main-sps-renater-metadata.xml" reloadInterval="7200">
+        <!--MetadataProvider type="XML" uri="https://metadata.federation.renater.fr/renater/main/main-all-renater-metadata.xml"
+                          backingFilePath="main-all-renater-metadata.xml" reloadInterval="7200">
             <MetadataFilter type="RequireValidUntil" maxValidityInterval="2419200"/>
             <MetadataFilter type="Signature" certificate="renater-metadata-signing-cert-2016.pem"/>
         </MetadataProvider-->
