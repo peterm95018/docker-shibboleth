@@ -11,6 +11,7 @@ COPY /shibboleth-sp/ /etc/shibboleth/
 # modify and copy your hosts config files and overwrite in image
 COPY /apache2/apache2.conf /etc/apache2/
 COPY /apache2/sygefor.conf /etc/apache2/
+COPY /apache2/shibboleth.conf /etc/apache2/
 
 # modify SSL settings in sites-available/default-ssl.conf
 COPY /apache2/sites-available/ /etc/apache2/sites-available/
@@ -21,6 +22,7 @@ COPY /apache2/ssl/ca-key.pem /etc/apache2/
 
 # Install PHP5 into image
 RUN apt-get update && apt-get install -y \
+wget \
 emacs \
 php5-common \
 php5-cli \
