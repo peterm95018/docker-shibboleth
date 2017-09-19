@@ -1,0 +1,3 @@
+#!/bin/sh
+
+export NOTI_PUSHBULLET_TOK="API_TOKEN" && noti -p -t "MESSAGE" -m "$1 finished" $1

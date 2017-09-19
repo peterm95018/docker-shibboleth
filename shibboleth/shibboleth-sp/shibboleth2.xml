@@ -88,13 +88,13 @@
                  discoveryProtocol="SAMLDS" discoveryURL="https://discovery.renater.fr/renater">
               SAML2 SAML1
             </SSO-->
-            <!--SSO discoveryProtocol="SAMLDS" discoveryURL="https://discovery.renater.fr/test">
+            <SSO discoveryProtocol="SAMLDS" discoveryURL="https://discovery.renater.fr/test">
                 SAML2 SAML1
-            </SSO-->
-
-            <SSO discoveryProtocol="SAMLDS" discoveryURL="https://sygefor.dev/wayf?lang=fr">
-              SAML2 SAML1
             </SSO>
+
+            <!--SSO discoveryProtocol="SAMLDS" discoveryURL="https://sygefor.dev/wayf?lang=fr">
+              SAML2 SAML1
+            </SSO-->
 
             <!-- SAML and local-only logout. -->
             <Logout>SAML2 Local</Logout>
