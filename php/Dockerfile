@@ -31,9 +31,9 @@ RUN sed -i 's/stretch/jessie/g' /etc/apt/sources.list \
     && apt-get update
 
 # Monitoring unoconv
-COPY /config/unoconv/noti /usr/local/bin/
-COPY /config/unoconv/notify /usr/local/bin/
-COPY /config/unoconv/unoconv.service /etc/systemd/system
+#COPY /config/unoconv/noti /usr/local/bin/
+#COPY /config/unoconv/notify /usr/local/bin/
+#COPY /config/unoconv/unoconv.service /etc/systemd/system
 #RUN systemctl enable unoconv.service
 #RUN systemctl start unoconv.service
 
