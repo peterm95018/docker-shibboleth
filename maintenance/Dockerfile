@@ -47,6 +47,7 @@ RUN apt-get update && apt-get install -y \
     php5-common \
     php5-cli \
     php5-curl \
+    php5-mysql \
     php-apc \
     && php5enmod curl \
     && apt-get clean
@@ -58,15 +59,6 @@ RUN sed -i 's/jessie/stretch/g' /etc/apt/sources.list && apt-get update
 
 RUN php -r "eval('?>'.file_get_contents('https://getcomposer.org/installer'));"
 RUN mv composer.phar /usr/local/bin/composer
-
-RUN adduser \
-   --system \
-   --shell /bin/bash \
-   --gecos 'User for managing of git version control' \
-   --group \
-   --disabled-password \
-   --home /home/git \
-   git
 
 CMD ["sleep", "14400"]
 WORKDIR /var/www/sygefor
