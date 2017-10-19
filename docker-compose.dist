@@ -1,0 +1,77 @@
+version: "3.1"
+services:
+
+  php-fpm:
+    container_name: "php"
+    build: ./common/docker/php-fpm
+    volumes:
+      - ./:/var/www/sygefor
+      - ./common/docker/php-fpm/php.ini:/usr/local/etc/php/conf.d/php.ini
+    restart: always
+
+  nginx:
+    container_name: "nginx"
+    image: nginx:latest
+    volumes:
+        - ./:/var/www/sygefor
+        - ./common/docker/nginx/sites-enabled:/etc/nginx/conf.d
+        - ./common/docker/nginx/certificates:/etc/nginx/certificates
+        - ./var/log/nginx/:/var/log/nginx
+    ports:
+        - "80:80"
+        - "443:443"
+    restart: always
+
+  shibboleth:
+    container_name: "shibboleth"
+    build: ./common/docker/shibboleth
+#    command: while :; do sleep 3600; done &
+    volumes:
+        # Sources
+        - ./:/var/www/sygefor
+
+        # Apache volumes
+        - ./common/docker/shibboleth/apache2/sites-enabled:/etc/apache2/sites-enabled
+        - ./common/docker/shibboleth/apache2/certificates:/etc/apache2/certificates
+        - ./common/docker/shibboleth/apache2/rpaf.conf:/etc/apache2/mods-enabled/rpaf.conf
+        - ./var/log/apache2/:/var/log/apache2
+
+        # Shibboleth volumes
+        - ./common/docker/shibboleth/shibboleth-sp/:/etc/shibboleth/
+        - ./var/log/shibboleth/:/var/log/shibboleth
+    restart: always
+
+  mysql:
+    container_name: "mysql"
+    image: library/mysql:5.6
+    environment:
+        - MYSQL_USER=dev
+        - MYSQL_PASSWORD=dev
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=sygefor3
+    ports:
+        - "3306:3306"
+    volumes:
+        - ./var/mysql:/var/lib/mysql
+    restart: always
+
+  elasticsearch:
+    container_name: "elasticsearch"
+    image: elasticsearch:1.4.5
+#    command: bin/plugin -install mobz/elasticsearch-head
+#    ports:
+#        - "9200:9200"
+    restart: always
+
+#  mailcatcher:
+#    container_name: "mailcatcher"
+#    image: schickling/mailcatcher
+#    ports:
+#        - "1035:1025"
+#        - "1080:1080"
+
+  maintenance:
+    container_name: "maintenance"
+    build: ./common/docker/maintenance
+    volumes:
+      - ./:/var/www/sygefor
