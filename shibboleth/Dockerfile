@@ -3,9 +3,9 @@ MAINTAINER Erwan Conjecto (erwan@conjecto.com)
 
 # Install apache2 and shibboleth
 RUN apt-get update && apt-get upgrade -y \
-	&& apt-get -y install apache2 libapache2-mod-shib2 \
+	&& apt-get -y install apache2 libapache2-mod-shib2 libapache2-mod-rpaf \
 	&& apt-get clean \
-    && a2enmod ssl proxy rewrite proxy_http proxy_fcgi
+    && a2enmod ssl proxy rewrite proxy_http proxy_fcgi rpaf
 
 # Start shibd
 COPY httpd-foreground /usr/local/bin/
