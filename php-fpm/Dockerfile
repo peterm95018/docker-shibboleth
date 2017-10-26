@@ -17,6 +17,7 @@ RUN apt-get update && apt-get upgrade -y  \
     && docker-php-ext-install -j$(nproc) curl iconv intl xml soap mcrypt opcache pdo pdo_mysql mysqli mbstring \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd
+RUN pecl install apcu-4.0.11
 
 ###########################
 ### Install unoconv 0.7 ###
