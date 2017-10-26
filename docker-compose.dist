@@ -61,13 +61,15 @@ services:
 #    command: bin/plugin -install mobz/elasticsearch-head
 #    ports:
 #        - "9200:9200"
+    volumes:
+        - ./var/elasticsearch:/var/lib/elasticsearch
     restart: always
 
 #  mailcatcher:
 #    container_name: "mailcatcher"
 #    image: schickling/mailcatcher
 #    ports:
-#        - "1035:1025"
+#        - "1025:1025"
 #        - "1080:1080"
 
   maintenance:
