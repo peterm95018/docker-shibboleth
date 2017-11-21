@@ -33,17 +33,16 @@ RUN apt-get update \
     && apt-get clean
 RUN sed -i 's/stretch/jessie/g' /etc/apt/sources.list \
     && apt-get update
+RUN chown www-data. /var/www
+RUN chown www-data. /var/www/html -R
+
 
 #####################
 ### Add cron taks ###
 #####################
 
-RUN apt-get install -y cron && apt-get clean
-RUN echo "0 1 * * * /var/www/sygefor/shell/cron/reseda.sh" > /etc/cron.d/reseda
-RUN echo "0 2 * * * /var/www/sygefor/shell/cron/elasticsearch.sh" > /etc/cron.d/elasticsearch
-RUN crontab /etc/cron.d/reseda
-RUN crontab /etc/cron.d/elasticsearch
-CMD ["cron", "-f"]
+RUN apt-get install cron -y --no-install-recommends
+RUN echo '0 2 * * * /var/www/sygefor/shell/cron.sh' >> /etc/crontab
 
 WORKDIR /usr/local/etc
 CMD ["php-fpm"]
