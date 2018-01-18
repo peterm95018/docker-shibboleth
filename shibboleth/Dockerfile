@@ -7,6 +7,14 @@ RUN apt-get update && apt-get upgrade -y \
 	&& apt-get clean \
     && a2enmod ssl proxy rewrite proxy_http proxy_fcgi rpaf
 
+# Automatically update date
+RUN apt-get install -y ntp ntpdate && \
+    sed -i 's/debian.pool.ntp.org/fr.pool.ntp.org/g' /etc/ntp.conf && \
+#    ntpdate -s fr.pool.ntp.org && \
+    update-rc.d ntp enable && \
+    /etc/init.d/ntp start
+# dpkg-reconfigure tzdata -> Europe -> Paris
+
 # Start shibd
 COPY httpd-foreground /usr/local/bin/
 CMD ["httpd-foreground"]

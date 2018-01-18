@@ -37,6 +37,21 @@ RUN sed -i 's/stretch/jessie/g' /etc/apt/sources.list \
 RUN chown www-data. /var/www
 RUN chown www-data. /var/www/html -R
 
+# Automatically update date
+RUN apt-get install -y ntp ntpdate && \
+    sed -i 's/debian.pool.ntp.org/fr.pool.ntp.org/g' /etc/ntp.conf && \
+    ntpdate -s fr.pool.ntp.org && \
+    update-rc.d ntp enable && \
+    /etc/init.d/ntp start
+# dpkg-reconfigure tzdata -> Europe -> Paris
+
+# Local fr for publipostage
+RUN sed -i 's/jessie/stretch/g' /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y  locales
+# dpkg-reconfigure locales -> eu_FR.UTF-8
+RUN sed -i 's/stretch/jessie/g' /etc/apt/sources.list \
+    && apt-get update
 
 #####################
 ### Add cron taks ###
