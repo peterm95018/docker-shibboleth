@@ -49,7 +49,7 @@ RUN apt-get install -y ntp ntpdate && \
 RUN sed -i 's/jessie/stretch/g' /etc/apt/sources.list && \
     apt-get update && \
     apt-get install -y  locales
-# dpkg-reconfigure locales -> eu_FR.UTF-8
+# dpkg-reconfigure locales -> fr_FR.UTF-8
 RUN sed -i 's/stretch/jessie/g' /etc/apt/sources.list \
     && apt-get update
 

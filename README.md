@@ -19,4 +19,4 @@ Then, you need to match sygefor.dev to 127.0.0.1 in your host file.
 - php app/console doctrine:fixtures:load
 - php app/console fos:elastica:populate
 - cd shell; sh clear-cache.sh
-- Go to http://localhost and http://sygefor.dev
+- Go to https://localhost and https://sygefor.com

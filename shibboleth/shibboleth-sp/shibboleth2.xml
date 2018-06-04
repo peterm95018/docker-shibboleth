@@ -92,7 +92,7 @@
                 SAML2 SAML1
             </SSO>
 
-            <!--SSO discoveryProtocol="SAMLDS" discoveryURL="https://sygefor.dev/wayf?lang=fr">
+            <!--SSO discoveryProtocol="SAMLDS" discoveryURL="https://sygefor.com/wayf?lang=fr">
               SAML2 SAML1
             </SSO-->
 
