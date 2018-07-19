@@ -1,6 +1,6 @@
 # Description
 
-This image contains PHP5, Apache2, [Shibboleth](https://en.wikipedia.org/wiki/Shibboleth_(Shibboleth_Consortium) and the mail utils needed to make Sygefor3 works.
+This image contains PHP5, Apache2, Shibboleth and the mail utils needed to make Sygefor3 works.
 
 You can override the [shibboleth2.xml](https://github.com/sygefor/docker-shibboleth/blob/master/shibboleth-sp/shibboleth2.xml) file
 to use your own entityID, discoveryProtocol, MetadataProviders and certificates for Shibboleth.
