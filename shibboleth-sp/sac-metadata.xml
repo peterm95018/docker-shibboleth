@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" entityID="urn:mace:cru.fr:federation:sac" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol"><Extensions><shibmd:Scope regexp="false">sac.cru.fr</shibmd:Scope></Extensions><KeyDescriptor><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIDIzCCAgugAwIBAgIUGEidswuMXi6Jmc16GB0pC5lOEfgwDQYJKoZIhvcNAQEF
+BQAwGTEXMBUGA1UEAxMOY3J1LnJlbmF0ZXIuZnIwHhcNMTMwNTAzMTQ1MzE5WhcN
+MzMwNTAzMTQ1MzE5WjAZMRcwFQYDVQQDEw5jcnUucmVuYXRlci5mcjCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAJtlU/vZ/CzUpx2iLlUV8RVcASv5Oxsh
+x9FzeXSlgqi9yHNYm2K0A/oacdMZcUy2R8cttdY7wyBd6f1xruXHeGaRv0cLhOpk
+J/8w4FjkU1c3ASMsQ+Mf4u/luOARju6jTPmC8p9iEwtD9CHZ0tXClFxwslDF1BJf
+7cr/DbUfFSiU4nK36mq1HawKPI+m3c/apfcZByfo+B/dE736AkxXyvmga0ydNYma
+LmuSgfa4XSl+c7K3Mre+YAK5PAE5zlNVquIOp7VDl6zyMLfgi7Qb6Z8+3Gc0nCce
+ImEnEcR8ez7IRz4T+zqH5VL6qPud6cG65ZAs5vY1nuIsDn8aCNTTzicCAwEAAaNj
+MGEwQAYDVR0RBDkwN4IOY3J1LnJlbmF0ZXIuZnKGJWh0dHBzOi8vY3J1LnJlbmF0
+ZXIuZnIvaWRwL3NoaWJib2xldGgwHQYDVR0OBBYEFCmFBG0i8OaQFCIQePPfK+Hp
+XIDpMA0GCSqGSIb3DQEBBQUAA4IBAQCR4/luQITnk74Sr+FimNPEpSrudH6MmUS0
+gSWV4ncwZCh/Kksgpxp3fu3vGCj7iXLE4OX6HCfRSKxlB/4lt7KoeWNPopbf4EXq
+nM98cqsKao++vLy7p3cDyUNc42DExEK2yVbh4aN8d7IsppKxUUseaiQnOmme4HAW
+2Y+QreZN6s3EL/Hi+P7jHM1iIxHXgymcilTgGyCC7x6kNDeSOkXPNjsuud78QGE7
+La1dwmUrSMJG2AugUKoq2txNSxhOlZ85r0FGDmkg/Us69HnC4xFameCGtS6MlDHd
+UxyU+xLNIhDCqDzROFdtSNCDEXyhkwf2e2311p3o38MmAM9YopVo</ds:X509Certificate></ds:X509Data></ds:KeyInfo></KeyDescriptor><ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://cru.renater.fr:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/><ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://cru.renater.fr:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/><NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat><NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat><SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://cru.renater.fr/idp/profile/Shibboleth/SSO"/><SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://cru.renater.fr/idp/profile/SAML2/POST/SSO"/><SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://cru.renater.fr/idp/profile/SAML2/POST-SimpleSign/SSO"/><SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://cru.renater.fr/idp/profile/SAML2/Redirect/SSO"/></IDPSSODescriptor><AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol"><Extensions><shibmd:Scope regexp="false">sac.cru.fr</shibmd:Scope></Extensions><KeyDescriptor><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIDIzCCAgugAwIBAgIUGEidswuMXi6Jmc16GB0pC5lOEfgwDQYJKoZIhvcNAQEF
+BQAwGTEXMBUGA1UEAxMOY3J1LnJlbmF0ZXIuZnIwHhcNMTMwNTAzMTQ1MzE5WhcN
+MzMwNTAzMTQ1MzE5WjAZMRcwFQYDVQQDEw5jcnUucmVuYXRlci5mcjCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAJtlU/vZ/CzUpx2iLlUV8RVcASv5Oxsh
+x9FzeXSlgqi9yHNYm2K0A/oacdMZcUy2R8cttdY7wyBd6f1xruXHeGaRv0cLhOpk
+J/8w4FjkU1c3ASMsQ+Mf4u/luOARju6jTPmC8p9iEwtD9CHZ0tXClFxwslDF1BJf
+7cr/DbUfFSiU4nK36mq1HawKPI+m3c/apfcZByfo+B/dE736AkxXyvmga0ydNYma
+LmuSgfa4XSl+c7K3Mre+YAK5PAE5zlNVquIOp7VDl6zyMLfgi7Qb6Z8+3Gc0nCce
+ImEnEcR8ez7IRz4T+zqH5VL6qPud6cG65ZAs5vY1nuIsDn8aCNTTzicCAwEAAaNj
+MGEwQAYDVR0RBDkwN4IOY3J1LnJlbmF0ZXIuZnKGJWh0dHBzOi8vY3J1LnJlbmF0
+ZXIuZnIvaWRwL3NoaWJib2xldGgwHQYDVR0OBBYEFCmFBG0i8OaQFCIQePPfK+Hp
+XIDpMA0GCSqGSIb3DQEBBQUAA4IBAQCR4/luQITnk74Sr+FimNPEpSrudH6MmUS0
+gSWV4ncwZCh/Kksgpxp3fu3vGCj7iXLE4OX6HCfRSKxlB/4lt7KoeWNPopbf4EXq
+nM98cqsKao++vLy7p3cDyUNc42DExEK2yVbh4aN8d7IsppKxUUseaiQnOmme4HAW
+2Y+QreZN6s3EL/Hi+P7jHM1iIxHXgymcilTgGyCC7x6kNDeSOkXPNjsuud78QGE7
+La1dwmUrSMJG2AugUKoq2txNSxhOlZ85r0FGDmkg/Us69HnC4xFameCGtS6MlDHd
+UxyU+xLNIhDCqDzROFdtSNCDEXyhkwf2e2311p3o38MmAM9YopVo</ds:X509Certificate></ds:X509Data></ds:KeyInfo></KeyDescriptor><AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://cru.renater.fr:8443/idp/profile/SAML1/SOAP/AttributeQuery"/><AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://cru.renater.fr:8443/idp/profile/SAML2/SOAP/AttributeQuery"/><NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat><NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat></AttributeAuthorityDescriptor><Organization><OrganizationName xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:lang="fr">Comptes CRU - Compte Reseau Universel</OrganizationName><OrganizationDisplayName xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:lang="fr">Comptes CRU</OrganizationDisplayName><OrganizationURL xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:lang="fr">https://cru.renater.fr/sac/</OrganizationURL></Organization><ContactPerson contactType="technical"><SurName>Support Comptes CRU</SurName><EmailAddress>support-comptes-cru@support.renater.fr</EmailAddress></ContactPerson></EntityDescriptor>
