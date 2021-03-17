@@ -29,7 +29,7 @@ RUN apt-get update && \
         php5-curl \
         php5-intl \
         php5-mysql \
-		php5-dev \
+        php5-dev \
         php-apc \
         libapache2-mod-php5 \
     && php5enmod curl \
@@ -46,7 +46,8 @@ RUN apt-get install -y nodejs
 RUN apt-get install -y git
 RUN apt-get clean
 RUN npm install -g n
-RUN n 6.8.0
+RUN n 6.8.0 
+RUN PATH="$PATH"
 RUN npm install gulp -g
 RUN npm install yarn -g
 RUN npm install bower -g
@@ -103,13 +104,6 @@ COPY httpd-foreground /usr/local/bin/
 CMD ["httpd-foreground"]
 
 RUN echo "Listen 80" > /etc/apache2/ports.conf
-
-#RUN sed -i 's/stretch/jessie/g' /etc/apt/sources.list && \
-#    apt-get update && \
-#	apt-get install php5-fpm -y && \
-#	sed -i 's/jessie/stretch/g' /etc/apt/sources.list \
-#    && apt-get update
-#RUN apt-get install nginx -y && apt-get clean
 
 WORKDIR /var/www
 EXPOSE 80 82 443
