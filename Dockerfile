@@ -104,5 +104,5 @@ CMD ["httpd-foreground"]
 
 RUN echo "Listen 80" > /etc/apache2/ports.conf
 
-WORKDIR /var/www
+WORKDIR /var/www/sygefor
 EXPOSE 80 82 443 9000
