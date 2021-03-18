@@ -1,5 +1,4 @@
 FROM debian:jessie
-MAINTAINER Erwan Conjecto (erwan@conjecto.com)
 
 ######################################
 ### Install APACHE2 AND SHIBBOLETH ###
@@ -106,4 +105,4 @@ CMD ["httpd-foreground"]
 RUN echo "Listen 80" > /etc/apache2/ports.conf
 
 WORKDIR /var/www
-EXPOSE 80 82 443
+EXPOSE 80 82 443 9000

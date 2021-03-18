@@ -21,7 +21,7 @@ services:
     ports:
         - "9200:9200"
     volumes:
-        - ./var/elasticsearch:/var/lib/elasticsearch
+        - ./var/elasticsearch:/usr/share/elasticsearch/data
 
   shibboleth_sp:
     container_name: "sygefor_shibboleth"
