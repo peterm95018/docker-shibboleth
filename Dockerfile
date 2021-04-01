@@ -102,7 +102,7 @@ RUN echo "zend_extension=$(find /usr/lib/php5/ -name xdebug.so)" >> /etc/php5/ap
 COPY httpd-foreground /usr/local/bin/
 CMD ["httpd-foreground"]
 
-RUN echo "Listen 80" > /etc/apache2/ports.conf
+RUN echo -e "Listen 80\nListen 82\nListen 443" > /etc/apache2/ports.conf
 
 WORKDIR /var/www/sygefor
 EXPOSE 80 82 443 9000
