@@ -92,8 +92,8 @@ COPY xdebug.ini /etc/php5/mods-available/
 # RUN echo "zend_extension=$(find /usr/lib/php5/ -name xdebug.so)" >> /etc/php5/mods-available/xdebug.ini
 COPY xdebug.ini /etc/php5/apache2/conf.d/
 COPY xdebug.ini /etc/php5/cli/conf.d/
-RUN echo "zend_extension=$(find /usr/lib/php5/ -name xdebug.so)" >> /etc/php5/apache2/conf.d/xdebug.ini \
-    && echo "zend_extension=$(find /usr/lib/php5/ -name xdebug.so)" >> /etc/php5/cli/conf.d/xdebug.ini	
+RUN echo -e "\nzend_extension=$(find /usr/lib/php5/ -name xdebug.so)" >> /etc/php5/apache2/conf.d/xdebug.ini \
+    && echo -e "\nzend_extension=$(find /usr/lib/php5/ -name xdebug.so)" >> /etc/php5/cli/conf.d/xdebug.ini	
 
 ###################
 ### START SHIBD ###
